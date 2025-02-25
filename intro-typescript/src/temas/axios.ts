@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 import type { GIFResponse } from "../interfaces/giphyResponse";
-const apiKey = "dqUb7HjgwVA4wWVf3Oa2aAdoifZkuyak";
+const apiKey = "";
 
 export const giphyApi = Axios.create({
   baseURL: "https://api.giphy.com/v1/gifs",
