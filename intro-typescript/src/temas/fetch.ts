@@ -1,5 +1,5 @@
 import type { GIFResponse } from "../interfaces/giphyResponse";
-const apiKey = "dqUb7HjgwVA4wWVf3Oa2aAdoifZkuyak";
+const apiKey = "ñ";
 
 // fetch('api.giphy.com/v1/randomid')
 
