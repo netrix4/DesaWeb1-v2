@@ -64,24 +64,25 @@ export const getJsonData = async () => {
   }
 };
 
-getJsonData()
-  .then((alimentos) => {
-    console.log(alimentos);
-  })
-  .catch((err) => console.log(err));
+// getJsonData()
+//   .then((alimentos) => {
+//     console.log(alimentos);
+//   })
+//   .catch((err) => console.log(err));
 
-const listadoCategorias = Object.values(Categoría);
+// const listadoCategorias = Object.values(Categoría);
 
-const categoriaSeleccionada = listadoCategorias[15];
-console.log(categoriaSeleccionada, listadoCategorias.length);
+// const categoriaSeleccionada = listadoCategorias[15];
+// console.log(categoriaSeleccionada, listadoCategorias.length);
 
-getJsonDataByCategorie(categoriaSeleccionada)
-  .then((nombreAlimentos) => {
-    console.log(nombreAlimentos);
-  })
-  .catch((err) => console.log(err));
+// getJsonDataByCategorie(categoriaSeleccionada)
+//   .then((nombreAlimentos) => {
+//     console.log(nombreAlimentos);
+//   })
+//   .catch((err) => console.log(err));
 
-const palabraClave = "crudo";
+const palabraClave = "Pan";
+console.log(`Palabra clave buscada: ${palabraClave}`)
 
 getJsonDataByKeyWord(palabraClave)
   .then((nombreAlimentos) => {
