@@ -1,28 +1,36 @@
 import { SmaeResponse, Categoría } from "../interfaces/SMAEResponse";
 
-// fetch(`../data/smae.json`)
-//   .then((resp) => resp.json())
-//   .then((alimentos: SmaeResponse[]) => {
-//     // const alimento = alimentos[50];
-//     const nommbresDeALimentos = alimentos.map((item) => `${item.Alimento}\n`);
+/**
+ * @module JSON/Fetcher
+ * @author Mario Arias &lt;netrix4@gmail>
+ */
 
-//     // console.log(
-//     //   `La respuesta del api locales: \nNombre: ${
-//     //     alimento.Alimento
-//     //   }\nCategoria: ${alimento.Categoría.toString()}\n`
-//     // );
+/**
+ * Gets all the data from SMAE json file locallly using asyncronous fetch and looks for all the results searched by the provided keyword.
+ * @function
+ * @param {string} keyWord A literal of a word included in the name of the food (Alike <alike> in SQL)
+ * @returns {object[]} A list of objects thst the matched results
+ */
+export const getJsonDataByKeyWord = async (keyWord: string) => {
+  try {
+    const response = await fetch(`../data/smae.json`)
+      .then((resp) => resp.json())
+      .then(
+        (alimentos: SmaeResponse[]) =>
+          alimentos.filter((item) => item.Alimento.includes(keyWord))
+        // .then((alimentos: SmaeResponse[]) => alimentos.filter((item) => item.toString() .includes(keyWord))
+      );
+    return response;
+  } catch (error) {
+    throw "Error: json failed";
+  }
+};
 
-//     console.log(
-//       `Estos son los nombres de todos los alimentos:\n${nommbresDeALimentos}`
-//     );
-//   })
-//   .catch((err) => console.error(err));
-
-// Sacar solo las categorias unicassss
-
-//Todo
-// No traer los alimentos de cierta categoria
-
+/**
+ * Gets all the data from SMAE json file locallly using asyncronous fetch and searched by a provided categorie name
+ * @param {string} categorie Literal of a categorie to look for
+ * @returns {Object[]} A list of resulting objects {Alimento: 'NameOfFood'}
+ */
 export const getJsonDataByCategorie = async (categorie: string) => {
   try {
     const response = await fetch(`../data/smae.json`)
@@ -36,6 +44,10 @@ export const getJsonDataByCategorie = async (categorie: string) => {
   }
 };
 
+/**
+ * Gets all the data from SMAE json file locallly using asyncronous fetch. No params needed.
+ * @returns {object[]} A list of all objects within the JSON file
+ */
 export const getJsonData = async () => {
   try {
     const response = await fetch(`../data/smae.json`)
@@ -51,6 +63,12 @@ export const getJsonData = async () => {
   }
 };
 
+getJsonData()
+  .then((alimentos) => {
+    console.log(alimentos);
+  })
+  .catch((err) => console.log(err));
+
 const listadoCategorias = Object.values(Categoría);
 
 const categoriaSeleccionada = listadoCategorias[15];
@@ -58,7 +76,14 @@ console.log(categoriaSeleccionada, listadoCategorias.length);
 
 getJsonDataByCategorie(categoriaSeleccionada)
   .then((nombreAlimentos) => {
-    // const listaFormateada = nombreAlimentos
+    console.log(nombreAlimentos);
+  })
+  .catch((err) => console.log(err));
+
+const palabraClave = "crudo";
+
+getJsonDataByKeyWord(palabraClave)
+  .then((nombreAlimentos) => {
     console.log(nombreAlimentos);
   })
   .catch((err) => console.log(err));
