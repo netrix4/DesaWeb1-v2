@@ -1,9 +1,10 @@
-import { SmaeResponse, Categoría } from "../interfaces/SMAEResponse";
-
 /**
  * @module JSON/Fetcher
- * @author Mario Arias &lt;netrix4@gmail>
- */
+ * @author Mario Arias netrix4@gmail>
+*/
+
+import { SmaeResponse, Categoría } from "../interfaces/SMAEResponse";
+
 
 /**
  * Gets all the data from SMAE json file locallly using asyncronous fetch and looks for all the results searched by the provided keyword.

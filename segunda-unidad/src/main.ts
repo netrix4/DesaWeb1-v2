@@ -1,6 +1,6 @@
 import './style.css'
 import typescriptLogo from './typescript.svg'
-import "../lib/getJSONData.ts";
+import {  } from "../lib/getJSONData.ts";
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>

@@ -1,3 +1,7 @@
+/**
+ * Interface to define a structured DataType for mapping and standarizing a json response from smae.json file locally
+ */
+
 export interface SmaeResponse {
     Alimento:              string;
     AzucarPorEquivalenteG: string;
