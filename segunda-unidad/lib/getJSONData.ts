@@ -8,14 +8,7 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, get, ref } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBMHPvj9QCr46HuJxLnmxM3R752pzpAxGM",
-  authDomain: "samedatabase.firebaseapp.com",
-  databaseURL: "https://samedatabase-default-rtdb.firebaseio.com",
-  projectId: "samedatabase",
-  storageBucket: "samedatabase.firebasestorage.app",
-  messagingSenderId: "1003026858143",
-  appId: "1:1003026858143:web:2635b3b724646c6a8ae2aa",
-  measurementId: "G-9M32C6NPPG",
+  //apiHeaderInfo
 };
 
 /**
