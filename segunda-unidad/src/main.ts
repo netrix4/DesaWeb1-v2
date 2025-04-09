@@ -97,6 +97,7 @@ document.getElementById("nombre")?.addEventListener("change", () => {
 
 document.getElementById("consult")!.addEventListener("click", () => {
   if ((document.getElementById("todos") as HTMLInputElement).checked) {
+    console.clear();
     // (document.getElementById("search") as HTMLInputElement).disabled = true;
     // document.querySelector<HTMLInputElement>("#search")!.disabled = true;
 
@@ -118,6 +119,7 @@ document.getElementById("consult")!.addEventListener("click", () => {
       .catch((err) => console.log(err));
   }
   if ((document.getElementById("categoria") as HTMLInputElement).checked) {
+    console.clear();
     const inputValue: string = (
       document.getElementById("categories") as HTMLSelectElement
     ).value;
@@ -147,6 +149,7 @@ document.getElementById("consult")!.addEventListener("click", () => {
       .catch((err) => console.log(err));
   }
   if ((document.getElementById("nombre") as HTMLInputElement).checked) {
+    console.clear();
     console.log("Nombre esta seleccionado");
     const inputValue = (document.getElementById("search") as HTMLInputElement)
       .value;
